@@ -1,0 +1,4 @@
+pybliometrics
+beautifulsoup4
+bibtexparser
+requests

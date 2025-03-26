@@ -7,7 +7,6 @@
 ```bash
 pip install virtualenv
 ```
-```
 ```bash
 sudo apt install python3-venv
 ```

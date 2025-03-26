@@ -2,8 +2,10 @@
 
 If you are an academic writer that needs to **QUICKLY** get a bib reference, this plugin is for you!
 
-Scopus Bib References allows you to get the bib reference right at your clipboard 
+Scopus Bib References allows you to get the bib reference right at your **clipboard**
 without having to manually download it:
+
+https://github.com/user-attachments/assets/e1aa4403-a0cb-4de1-9271-727cef41b754
 
 # Dependencies
 

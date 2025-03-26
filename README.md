@@ -1,5 +1,9 @@
 # Automated Scopus Bib References
 
+If you are an academic writer that needs to **QUICKLY** get a bib reference, this plugin is for you!
+
+Scopus Bib References allows you to get the bib reference right at your clipboard 
+without having to manually download it:
 
 # Dependencies
 

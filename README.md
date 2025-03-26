@@ -23,6 +23,7 @@ Lazy:
 {
     "johannww/scopus-bib-references.nvim",
     cmd = { "ScopusBibReference" },
+    config = true,
 },
 
 ```

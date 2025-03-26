@@ -14,7 +14,6 @@ sudo apt install python3-venv
 ```bash
 sudo pacman -S python-virtualenv
 ```
-```
 
 # Installation
 

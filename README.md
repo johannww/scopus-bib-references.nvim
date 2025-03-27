@@ -7,6 +7,10 @@ without having to manually download it:
 
 https://github.com/user-attachments/assets/e1aa4403-a0cb-4de1-9271-727cef41b754
 
+# Current database support
+
+Scopus, IEEE, ACM, Springer, ScienceDirect, and MDPI
+
 # Dependencies
 
 - python virtual environment

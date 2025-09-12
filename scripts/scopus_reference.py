@@ -58,9 +58,11 @@ if is_sciencedirect:
     article_id = article_url.split("pii/")[1]
     id_type = "pii"
 elif is_scopus:
-    matches = re.match(r"https://www.scopus.com/record/.*eid=(.*?)&", article_url)
+    # matches = re.match(r"https://www.scopus.com/record/.*eid=(.*?)&", article_url)
+    # id_type = "eid"
+    matches = re.match(r"https://www.scopus.com/pages/publications/(.*?)$", article_url)
     article_id = matches.group(1)
-    id_type = "eid"
+    id_type = "scopus_id"
 elif is_ieee:
     article_id = ieee_doi_extract.extract_doi(article_url)
     id_type = "doi"

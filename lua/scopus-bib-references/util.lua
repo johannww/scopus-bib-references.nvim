@@ -45,4 +45,29 @@ M.call_venv_python = function(python_args)
     return output
 end
 
+local function file_exists(path)
+  local f = io.open(path, "r")
+  if f then f:close() return true end
+  return false
+end
+
+M.init_pybliometrics_config = function(pythonScriptDir)
+    local home = os.getenv("HOME")
+    local config_path = home .. "/.config/pybliometrics.cfg"
+
+    if file_exists(config_path) then
+        return
+    end
+
+    local scopus_key = vim.fn.input("Enter your scopus API Key: ")
+
+    local output = ""
+    if vim.loop.os_uname().sysname == 'Windows_NT' then
+        output = M.call_venv_python(pythonScriptDir .. "\\scripts\\init.py" .. " \"" .. scopus_key .. "\"")
+    else
+        output = M.call_venv_python(pythonScriptDir .. "/scripts/init.py" .. " '" .. scopus_key .. "'")
+    end
+    print(output)
+end
+
 return M

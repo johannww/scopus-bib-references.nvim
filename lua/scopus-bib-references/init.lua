@@ -2,9 +2,9 @@ M = {}
 
 local util = require("scopus-bib-references.util")
 local config = require("scopus-bib-references.config")
+local pythonScriptDir = debug.getinfo(1, "S").source:sub(2):gsub("lua/scopus%-bib%-references/init%.lua", "")
 
 M.scopusBibReference = function()
-    local pythonScriptDir = debug.getinfo(1, "S").source:sub(2):gsub("lua/scopus%-bib%-references/init%.lua", "")
     local article_url = vim.fn.input("Enter the article url: ")
     local output = ""
     if vim.loop.os_uname().sysname == 'Windows_NT' then
@@ -32,6 +32,7 @@ M.setup = function(opts)
 
     local requirements_file = debug.getinfo(1, "S").source:sub(2):gsub("lua/scopus%-bib%-references/init%.lua", "requirements.txt")
     util.install_modules(requirements_file)
+    util.init_pybliometrics_config(pythonScriptDir)
 end
 
 return M

@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/e1aa4403-a0cb-4de1-9271-727cef41b754
 
 # Current database support
 
-Scopus, IEEE, ACM, Springer, ScienceDirect, and MDPI
+Scopus, IEEE, ACM, Springer, ScienceDirect, MDPI (CURRENT NOT WORKING), and DOI
 
 > [!WARNING]
 > You might need to use a VPN from your university to use the API.

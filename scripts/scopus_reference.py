@@ -71,9 +71,7 @@ elif is_springer:
     article_id = springer_doi_extract.extract_doi(article_url)
     id_type = "doi"
 elif is_mdpi:
-    print("ismdpi")
     article_id = mdpi_doi_extract.extract_doi(article_url)
-    print("article id", article_id)
     id_type = "doi"
 elif is_acm:
     matches = re.match(r"https://dl.acm.org/doi.*?/(\d.*$)", article_url)

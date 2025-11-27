@@ -1,15 +1,22 @@
 import requests
-from bs4 import BeautifulSoup
+import re, requests
 
 def extract_doi(url):
-    try:
-        response = requests.get(url)
-        soup = BeautifulSoup(response.text, 'html.parser')
-        doi = soup.find("meta", {"name":"citation_doi"}).get("content")
-        if doi:
-            return doi
-        else:
-            print("No DOI found on MDPI page")
-            exit(1)
-    except Exception as e:
-        return f"An error occurred: {str(e)}"
+    m = re.search(r"mdpi\.com/([^/]+)/([^/]+)/([^/]+)/([^/?#]+)", url)
+    if not m:
+        return None
+
+    issn, volume, issue, article = m.groups()
+
+    # build Crossref URL with parameters directly in the URL
+    crossref_url = (
+        f"https://api.crossref.org/works?"
+        f"query={url.split('https://www.mdpi.com/')[1]}"
+    )
+
+    r = requests.get(crossref_url, timeout=10)
+    items = r.json().get("message", {}).get("items", [])
+    for item in items:
+        if item["URL"].find(f"{volume}{issue}{article}") != -1:
+            return item.get("DOI")
+    return None
